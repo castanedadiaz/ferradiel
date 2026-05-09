@@ -645,91 +645,7 @@ h2 {
   color: inherit;
 }
 
-/* ---- Footer ---- */
 
-footer {
-  margin-top: 60px;
-  padding: 30px 20px 18px;
-  background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-profundo));
-  color: rgba(255,255,255,0.85);
-  font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
-}
-
-.footer-content {
-  max-width: 700px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-}
-
-.footer-brand {
-  font-family: "Bungee Shade", serif;
-  font-size: 1.4rem;
-  color: var(--naranja-fuerte);
-  margin-bottom: 4px;
-}
-
-.footer-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.85rem;
-}
-
-.footer-info a {
-  color: rgba(255,255,255,0.85);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-info a:hover {
-  color: var(--naranja-fuerte);
-}
-
-.footer-divider {
-  width: 60px;
-  height: 2px;
-  background: rgba(255,255,255,0.2);
-  border: none;
-  border-radius: 2px;
-  margin: 4px 0;
-}
-
-.footer-social {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-.footer-social a {
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  font-size: 1.3rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-  display: inline-flex;
-}
-
-.footer-social a:hover {
-  color: var(--whatsapp-green);
-  transform: scale(1.2);
-}
-
-.footer-social svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-}
-
-.footer-copy {
-  font-size: 0.75rem;
-  opacity: 0.5;
-  margin-top: 4px;
-}
 
 /* ============================================
    RESPONSIVE — MOBILE (max-width: 768px)
@@ -920,20 +836,7 @@ footer {
     display: none;
   }
 
-  /* Footer mobile */
-  footer {
-    margin-top: 40px;
-    padding: 24px 16px 14px;
-  }
 
-  .footer-info {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .footer-brand {
-    font-size: 1.2rem;
-  }
 
   /* Section divider mobile */
   .section-divider {
