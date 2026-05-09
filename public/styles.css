@@ -1,42 +1,75 @@
+/* ============================================
+   FERRADIEL — Estilos Principales
+   ============================================ */
+
 :root {
-  --light: hsl(0, 0%, 100%);
-  --primary: hsl(257, 47%, 3%);
-  --focus: hsl(208, 70%, 5%);
-  --border-color: hsla(0, 11%, 2%, 0.2);
-  --global-background: hsl(280, 33%, 30%);
-  --background: linear-gradient(to right, hsl(210, 9%, 70%), hsl(254, 43%, 25%));
-  --shadow-1: hsla(210, 32%, 49%, 0.3);
-  --shadow-2: hsla(0, 56%, 51%, 0.4);
+  --verde-oscuro: #073e0e;
+  --verde-profundo: #012205;
+  --naranja-claro: #fcdec9;
+  --naranja-medio: #f7a96f;
+  --naranja-fuerte: #f4822f;
+  --blanco: #ffffff;
+  --negro: #000000;
+  --gris-oscuro: #333;
+  --gris-medio: #444;
+  --whatsapp-green: #25D366;
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.10), 0 1.5px 6px rgba(0, 0, 0, 0.08);
+  --shadow-card: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  --gradient-green: linear-gradient(to right, #073e0e 0%, #012205 100%);
+  --radius: 12px;
 }
 
+/* ---- Reset & Base ---- */
+
 body {
-    font-family: "Bungee Hairline", serif;
-    line-height: 1.6;
-    background: linear-gradient(to bottom,#fcdec9, #f7a96f, #f49c54, #f4822f);
-    text-align: center;
-  }
+  font-family: "Inter", "Bungee Hairline", sans-serif;
+  line-height: 1.7;
+  background: linear-gradient(to bottom, #fcdec9, #f7a96f, #f49c54, #f4822f);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
-  section {
-    border: none;
-  }
+section {
+  border: none;
+}
 
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    transition: all 0.3s ease;
-    background: linear-gradient(to right,#ffffff, #ffffff, #f7a96f, #f49c54);
-    display: none;
-  }
-  
-  header.scrolled {
-    display: block;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+/* ---- Header ---- */
 
-  .seo-h1 {
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.7rem 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: none;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header.scrolled {
+  display: block;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+#logo {
+  display: none;
+}
+
+header.scrolled #logo {
+  display: block;
+  width: 180px;
+  transition: opacity 0.4s ease;
+}
+
+/* ---- SEO H1 (oculto) ---- */
+
+.seo-h1 {
   position: absolute;
   left: -9999px;
   width: 1px;
@@ -44,341 +77,866 @@ body {
   overflow: hidden;
 }
 
+/* ---- Tipografías ---- */
+
 .logo-text {
   font-family: "Bungee Shade", serif;
 }
 
-
-  #logo {
-    display: none;
-  }
-
-  #lugar {
-  display: none;
-  }
-
-  #lugar2 { 
-  display: none;
-  }
-
-
-  header.scrolled #logo {
-    display: block;
-    width: 220px;
-  }
-
-  .bungee-shade-regular {
-    font-family: "Bungee Shade", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .bungee-hairline-regular {
-    font-family: "Bungee Hairline", serif;
-  }
-  
-  .julius-sans-one-regular {
-    font-family: "Julius Sans One", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .container {
-   margin: 30px auto;
-    align-items: center;
-    width: 95%;
-    max-width: 100%;
-  }
-
-  h1 {
-    color: #333;
-    font-size: 2.5em;
-  }
-  
-  h2 {
-    color: #444;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-  }
-  
-  .hero {
-    text-align: center;
-    max-width: 100%;
-    margin: 0 auto; /* Centrar el contenedor */
-  }
-
-  .hero h1 {
-    font-family: "Bungee Shade", serif;
-    font-size: 6rem;
-    margin-bottom: 10px;
-    color: #3D5300;
-    text-shadow: 1px 0 #ffffff, -2px 0 #ffffff, 0 2px #ffffff, 0 -1px #ffffff,
-    0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 40px #f4822f, 0 0 80px #f4822f;
+.bungee-shade-regular {
+  font-family: "Bungee Shade", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-  .hero h1:hover {
-    cursor: pointer;
-    transition-duration: 1100ms;
-    text-shadow: 1px 0 #073e0e, -2px 0 #ffffff, 0 2px #fcf8fc, 0 -1px #073e0e,
+.bungee-hairline-regular {
+  font-family: "Bungee Hairline", serif;
+}
+
+.julius-sans-one-regular {
+  font-family: "Julius Sans One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ---- Container ---- */
+
+.container {
+  margin: 30px auto;
+  align-items: center;
+  width: 95%;
+  max-width: 100%;
+}
+
+/* ---- Hero ---- */
+
+h1 {
+  color: var(--gris-oscuro);
+  font-size: 2.5em;
+}
+
+h2 {
+  color: var(--gris-medio);
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.hero {
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero h2.logo-text {
+  font-family: "Bungee Shade", serif;
+  font-size: 6rem;
+  margin-bottom: 10px;
+  color: #3D5300;
+  text-shadow:
+    1px 0 var(--blanco), -2px 0 var(--blanco), 0 2px var(--blanco), 0 -1px var(--blanco),
+    0 0 5px rgba(255,255,255,1), 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,1),
+    0 0 40px #f4822f, 0 0 80px #f4822f;
+  border: none;
+}
+
+.hero h2.logo-text:hover {
+  cursor: pointer;
+  transition-duration: 1100ms;
+  text-shadow:
+    1px 0 #073e0e, -2px 0 var(--blanco), 0 2px #fcf8fc, 0 -1px #073e0e,
     1px 1px #073e0e, -1px -1px #073e0e, 1px -1px #f5eef5, -1px 1px #073e0e;
 }
 
-.dolores {height: 40px;}
 
-.confianza {
-  background-color: #012205;
+#dologo {
+  margin: 0 auto;
+  width: 470px;
+  height: 100px;
+  margin-bottom: 0;
 }
 
-  #dologo { 
-    margin: 0 auto;
-    width: 470px;
-    height: 100px;
-    margin-bottom: 0;
+#dologo p {
+  font-family: "Bungee Hairline", serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--negro);
+  background: var(--gradient-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#dologo p a {
+  text-decoration: none;
+}
+
+#dologo p:hover {
+  background: url('img/Dolores.png');
+  border-radius: 58px;
+  box-shadow: var(--verde-oscuro) 0px 0px 10px;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+
+.hero p {
+  font-family: "Bungee Hairline", serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--negro);
+  background: var(--gradient-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p.hero-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+  -webkit-text-fill-color: var(--verde-oscuro);
+  background: none;
+  -webkit-background-clip: unset;
+}
+
+#confianza {
+  font-family: "Inter", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+#lugar {
+  display: none;
+}
+
+#lugar a {
+  text-decoration: none;
+}
+
+#lugar2 {
+  display: none;
+}
+
+.dolores {
+  height: 40px;
+}
+
+/* ---- Botón Historia ---- */
+
+.boton {
+  margin-top: 10px;
+}
+
+.btn {
+  font-family: "Bungee Hairline", serif;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--blanco);
+  border: var(--blanco) 1px solid;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 8px;
+  background-color: var(--verde-oscuro);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--blanco);
+  color: var(--verde-oscuro);
+  border: var(--verde-oscuro) 1px solid;
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 2.3s ease;
+}
+
+.card {
+  margin-top: 5px;
+  font-family: "Julius Sans One", serif;
+  text-align: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--negro);
+  border: var(--blanco) 1px solid;
+  box-shadow: var(--shadow-card);
+  border-radius: 8px;
+  background-color: var(--blanco);
+}
+
+/* ---- Imágenes generales ---- */
+
+.img-fluid {
+  width: 400px;
+  height: auto;
+  border-radius: var(--radius);
+  border: 2px solid rgba(255,255,255,0.6);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-fluid:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+/* ---- WhatsApp icon en sección (no el flotante) ---- */
+
+.wa-section-icon {
+  margin-top: 55px;
+}
+
+.wa-section-icon a {
+  text-decoration: none;
+  color: var(--verde-oscuro);
+  font-size: 57px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.wa-section-icon a:hover {
+  color: var(--whatsapp-green);
+  transform: scale(1.15);
+}
+
+/* ---- Promo image ---- */
+
+.promo-wrapper {
+  margin-top: 55px;
+}
+
+.promo-img {
+  width: 310px;
+  height: auto;
+}
+
+/* ---- Secciones STIHL / Ferretería ---- */
+
+.stihl {
+  margin-top: 55px;
+}
+
+.stihl h2 {
+  font-family: "Bungee Hairline", serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--negro);
+  background: var(--gradient-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 10px;
+}
+
+.stihl p {
+  padding-top: 25px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  color: var(--negro);
+  background: var(--gradient-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stihl-logo-img {
+  width: 210px;
+}
+
+.stihl-product-img {
+  width: 310px;
+  margin-top: 12px;
+  margin-bottom: 28px;
+}
+
+.stihl-repair-img {
+  width: 310px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.ferreteria-title {
+  font-size: 2.8rem;
+}
+
+.ferre-img {
+  width: 310px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.contacto-title {
+  font-size: 2.8rem;
+}
+
+/* ---- Separadores entre secciones ---- */
+
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--naranja-fuerte), var(--verde-oscuro));
+  border: none;
+  border-radius: 3px;
+  margin: 50px auto 0;
+  opacity: 0.6;
+}
+
+/* ============================================
+   NUEVOS INGRESOS — Carrusel
+   ============================================ */
+
+.nuevos-ingresos {
+  margin-top: 60px;
+  padding: 40px 0 30px;
+  position: relative;
+}
+
+.nuevos-ingresos::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  height: 100%;
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  z-index: 0;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.nuevos-ingresos h2 {
+  font-family: "Bungee Hairline", serif;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: var(--negro);
+  background: var(--gradient-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 8px;
+  border: none;
+}
+
+.nuevos-ingresos .carousel-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--verde-oscuro);
+  opacity: 0.7;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.carousel-inner {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 2px solid rgba(255,255,255,0.5);
+  box-shadow: var(--shadow-soft);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(7, 62, 14, 0.7);
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.carousel-control-prev {
+  left: -18px;
+}
+
+.carousel-control-next {
+  right: -18px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  background: rgba(7, 62, 14, 0.95);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.carousel-indicators {
+  bottom: -30px;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--verde-oscuro);
+  opacity: 0.4;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  transform: scale(1.3);
+  background-color: var(--naranja-fuerte);
+}
+
+/* ============================================
+   BOTÓN FLOTANTE WHATSAPP
+   ============================================ */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.whatsapp-float.visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.whatsapp-float__tooltip {
+  background: var(--blanco);
+  color: var(--verde-oscuro);
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.whatsapp-float:hover .whatsapp-float__tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.whatsapp-float__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--whatsapp-green);
+  color: var(--blanco);
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.whatsapp-float__btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+  color: var(--blanco);
+}
+
+.whatsapp-float__btn svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--blanco);
+}
+
+/* Pulse animation */
+.whatsapp-float__btn::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--whatsapp-green);
+  opacity: 0;
+  animation: wa-pulse 2s ease-out infinite;
+}
+
+@keyframes wa-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   ANIMACIONES DE SCROLL
+   ============================================ */
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Contacto section ---- */
+
+.contacto-wa-icon {
+  margin-top: 5px;
+}
+
+.contacto-wa-icon a {
+  text-decoration: none;
+  color: var(--verde-oscuro);
+  font-size: 57px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.contacto-wa-icon a:hover {
+  color: var(--whatsapp-green);
+}
+
+.contacto-info a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---- Footer ---- */
+
+footer {
+  margin-top: 60px;
+  padding: 30px 20px 18px;
+  background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-profundo));
+  color: rgba(255,255,255,0.85);
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-brand {
+  font-family: "Bungee Shade", serif;
+  font-size: 1.4rem;
+  color: var(--naranja-fuerte);
+  margin-bottom: 4px;
+}
+
+.footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.footer-info a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-info a:hover {
+  color: var(--naranja-fuerte);
+}
+
+.footer-divider {
+  width: 60px;
+  height: 2px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 2px;
+  margin: 4px 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-social a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+}
+
+.footer-social a:hover {
+  color: var(--whatsapp-green);
+  transform: scale(1.2);
+}
+
+.footer-social svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE (max-width: 768px)
+   ============================================ */
+
+@media only screen and (max-width: 768px) {
+
+  body {
+    font-size: 1rem;
   }
 
-  #dologo P {
-    font-family: "Bungee Hairline", serif;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #000000;
-    background: linear-gradient(to right, #073e0e 0%, #012205 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
-  #dologo p:hover {
-    background: url('img/Dolores.png');
-    border-radius: 58px;
-    box-shadow: #073e0e 0px 0px 10px;
-    cursor: pointer;
-    transition: all 0.8s ease;
+
+  header.scrolled #logo {
+    width: 140px;
+  }
+
+  #dologo {
+    display: none;
+  }
+
+  #confianza {
+    margin-top: 35px;
+    font-size: 1rem;
+  }
+
+  #lugar {
+    margin-bottom: 0;
+    display: block;
+  }
+
+  #lugar2 {
+    margin-top: 0;
+    font-size: 1rem;
+    display: block;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 40px auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero h2.logo-text {
+    font-size: 2.9rem;
   }
 
   .hero p {
+    font-size: 1.3rem;
+  }
+
+  .contact {
+    font-size: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .btn {
     font-family: "Bungee Hairline", serif;
-    font-weight: bold;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--blanco);
+    border: var(--blanco) 1px solid;
+    box-shadow: var(--shadow-card);
+    border-radius: 8px;
+    background-color: var(--verde-oscuro);
+  }
+
+  .collapse:not(.show) {
+    display: none;
+  }
+
+  .collapsing {
+    height: 0;
+    overflow: hidden;
+    transition: height 2.3s ease;
+  }
+
+  .card {
+    font-family: "Julius Sans One", serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--negro);
+    border: var(--blanco) 1px solid;
+    box-shadow: var(--shadow-card);
+    border-radius: 8px;
+    background-color: rgba(255,255,255,0.75);
+  }
+
+  .img-fluid {
+    width: 90%;
+    max-width: 340px;
+    border-radius: var(--radius);
+    border: 2px solid rgba(255,255,255,0.6);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .stihl {
+    margin: 0 auto;
+    padding-top: 25px;
+    width: 100%;
+    margin-top: 35px;
+  }
+
+  .stihl h1 {
     font-size: 1.5rem;
-    color: #000000;
-    background: linear-gradient(to right, #073e0e 0%, #012205 100%);
+    padding-bottom: 15px;
+  }
+
+  .stihl p {
+    padding-top: 19px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--negro);
+    background: var(--gradient-green);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    }
+  }
 
-    .btn { 
-      font-family: "Bungee Hairline", serif;
-      text-align: center;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: #ffffff;
-      border: #ffffff 1px solid;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-      border-radius: 8px;
-      background-color: #073e0e;
-       }
-    
-    .btn:hover {
-      background-color: #ffffff;
-      color: #073e0e;
-      border: #073e0e 1px solid;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    }
-  
-    .collapse:not(.show) {
-      display: none;
-    }
-    
-    .collapsing {
-      height: 0;
-      overflow: hidden;
-      transition: height 2.3s ease; /* Reemplaza con tu transición específica */
-    }
+  .ferreteria-title,
+  .contacto-title {
+    font-size: 2rem !important;
+  }
 
-    .card {
-      margin-top: 5px;
-      font-family: "Julius Sans One", serif;
-      text-align: center;
-      align-items: center;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: #000000;
-      border: #ffffff 1px solid;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-      border-radius: 8px;
-      background-color: #ffffff;
-       }
-    
-    .img-fluid {
-      width: 400px;
-      height: auto;
-      border-radius: 12px;
-      border: #ffffff 1px solid;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    }
+  #textra {
+    display: none;
+  }
 
-    .stihl {
-      margin-top: 55px;
-    }
+  /* Carousel mobile */
+  .nuevos-ingresos {
+    margin-top: 40px;
+    padding: 30px 0 20px;
+  }
 
-    .stihl h2 {
-      font-family: "Bungee Hairline", serif;
-      font-weight: bold;
-      font-size: 1.5rem;
-      color: #000000;
-      background: linear-gradient(to right, #073e0e 0%, #012205 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      padding-bottom: 10px;
-      }
-    
-      .stihl p {
-        padding-top: 25px;
-         font-size: 1.3rem;
-         font-weight: bold;
-         color: #000000;
-      background: linear-gradient(to right, #073e0e 0%, #012205 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;;
-       }
+  .nuevos-ingresos::before {
+    width: 95%;
+  }
 
+  .carousel-wrapper {
+    max-width: 92%;
+  }
 
+  .carousel-item img {
+    height: 260px;
+  }
+
+  .carousel-control-prev {
+    left: -8px;
+  }
+
+  .carousel-control-next {
+    right: -8px;
+  }
+
+  /* WhatsApp float mobile */
+  .whatsapp-float {
+    bottom: 18px;
+    right: 18px;
+  }
+
+  .whatsapp-float__btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-float__btn svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .whatsapp-float__tooltip {
+    display: none;
+  }
+
+  /* Footer mobile */
   footer {
-    text-align: center;
-    color: #000000;
-      background: linear-gradient(to right, #073e0e 0%, #012205 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;;
+    margin-top: 40px;
+    padding: 24px 16px 14px;
   }
 
-
-  @media only screen and (max-width: 768px) {
-
-    body {
-      font-size: 1.8rem;
-    }
-
-    header {
-      width: 100%;
-      background: #ffffff;
-      }
-
-    #dologo {
-      display: none;
-    }
-
-    #confianza {
-      margin-top: 35PX;
-      font-size: 1.1rem;
-    }
-
-    #lugar {
-      margin-bottom: 0;
-      display: block;
-      }
-    
-      #lugar2 { 
-      margin-top: 0;
-      font-size: 1rem;
-      display: block;
-      }
-
-    .container {
-      width: 100%;
-      max-width: 100%;
-      margin: 40px auto; /* Centrar el contenedor */
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .hero {
-      max-width: 100%;
-      margin: 0 auto; /* Centrar el contenedor */
-    }
-
-    .contact {
-      font-size: 1rem;
-      width: 100%;
-      margin: 0 auto; /* Centrar el contenedor */
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 2.9rem;
-    }
-    .hero p {
-      font-size: 1.5rem;
-    }
-
-    .btn { 
-      font-family: "Bungee Hairline", serif;
-      text-align: center;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: #ffffff;
-      border: #ffffff 1px solid;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-      border-radius: 8px;
-      background-color: #073e0e;
-       }
-
-    .collapse:not(.show) {
-      display: none;
-    }
-    
-    .collapsing {
-      height: 0;
-      overflow: hidden;
-      transition: height 2.3s ease; /* Reemplaza con tu transición específica */
-    }
-
-    .card {
-      font-family: "Julius Sans One", serif;
-      text-align: center;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: #000000;
-      border: #ffffff 1px solid;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-      border-radius: 8px;
-      background-color: #ffffffbf;
-       }
-    
-    .img-fluid {
-      border-radius: 12px;
-      border: #ffffff 1px solid;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    }
-
-    .stihl {
-      margin: 0 auto;
-      padding-top: 25px;
-      width: 100%;
-      margin-top: 35px;
-    }
-
-    .stihl h1 {
-      font-size: 1.5rem;
-      padding-bottom: 15px;
-   }
-
-   .stihl p {
-    padding-top: 19px;
-     font-size: 1.1rem;
-     font-weight: bold;
-     color: #000000;
-      background: linear-gradient(to right, #073e0e 0%, #012205 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-   }
-
-   #textra {
-    display: none; }
-
-    footer {
-      width: 100%;
-      text-align: center;
-      color: #000000;
-      background: linear-gradient(to right, #073e0e 0%, #012205 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;;
-    }
-
+  .footer-info {
+    flex-direction: column;
+    gap: 4px;
   }
+
+  .footer-brand {
+    font-size: 1.2rem;
+  }
+
+  /* Section divider mobile */
+  .section-divider {
+    margin-top: 35px;
+  }
+}
